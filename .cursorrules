@@ -1,0 +1,28 @@
+# Facebook Marketplace Auto-Responder
+
+## Product context
+Rental listing automation (Montreal / Longueuil, Quebec French). Requirements and domain notes: `artifacts/requirements.md`. Orchestration: `artifacts/orchestration-definition.md`. Personas: `personas/`. Planned stack: Laravel + Vue + browser extension (see requirements).
+
+## Project management (use for backlog, sprints, releases)
+- **Start here**: `project-management/INDEX.md` — which processes to run, files to attach, AI workflow diagram, MCP pointer.
+- **Backlog**: `project-management/backlog/product-backlog.md`
+- **User stories / defects**: `project-management/backlog/user-stories/`, `project-management/backlog/defects/`
+- **Sprints**: `project-management/sprints/`
+- **Templates & processes**: `project-management/templates/`, `project-management/processes/`
+- **Quality gates**: `project-management/criteria/definition-of-done.md`, `project-management/criteria/definition-of-ready.md`
+- Before committing AI-assisted work: Documentation–code consistency + technical debt scan per `project-management/INDEX.md` (Pre-Commit Flow).
+
+## General project docs
+- **Root docs folder**: `docs/README.md` — architecture, API, and user guides (not the PM workflow tree).
+
+## Git commit messages (mandatory)
+Follow `project-management/processes/git-commit-guide.md`. This repo uses `git config commit.template project-management/templates/git-commit-template.txt`.
+
+1. **Subject line**: Start with `US-XXX:` or `DEF-XXX:` plus an imperative description (keep the full first line within ~72 characters; under ~50 when possible).  
+   *Optional Conventional Commits form*: `type(scope): subject` (max ~50 chars for that part) and put the backlog id in the footer: `Refs US-XXX`.
+2. **Body — business**: One short paragraph: why the change matters (user/stakeholder impact).
+3. **Body — technical**: Bullet list of concrete implementation changes.
+4. **Footer**: `Refs US-XXX` / `Refs DEF-XXX` or issue/PR references.
+
+## Coding expectations
+Prefer minimal, story-scoped changes. Match existing style and conventions in each file you touch.

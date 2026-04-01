@@ -1,0 +1,19 @@
+{
+  "name": "mcp-project-management",
+  "version": "1.0.0",
+  "description": "This folder is the intended home for a Model Context Protocol (MCP) server that exposes the workflow under `project-management/` (see [project-management/INDEX.md](../project-management/INDEX.md)).",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "verify": "node verify-mcp.mjs",
+    "test": "node verify-mcp.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.3.6"
+  }
+}
