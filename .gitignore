@@ -1,3 +1,39 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+.Python
+env/
+venv/
+.venv/
+
+# --- OS ---
 .DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+
+# --- Project-specific ---
 mcp-project-management/node_modules/
 mcp-project-management/.integration-test/
+
+# --- Environment ---
+.env
+.env.local
+.env.*.local
+*.log
+
+# --- Bmad / generated ---
+_bmad-output/

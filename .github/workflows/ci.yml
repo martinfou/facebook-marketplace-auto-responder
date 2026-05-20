@@ -1,0 +1,46 @@
+# CI for facebook-marketplace-auto-responder
+# Very early project — minimal checks for MVP scope.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-structure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+
+      - name: Lint with flake8
+        run: |
+          # Fail on errors, warn on style (line length 100)
+          flake8 . --count --show-source --statistics \
+            --max-line-length=120 \
+            --exclude=.git,__pycache__,.agents,_bmad,_bmad-output,mcp-project-management,artifacts,personas,project-management,docs \
+            --ignore=E203,W503,F401,F841
+
+      - name: Check repo structure
+        run: |
+          echo "=== Repository structure ==="
+          find . -maxdepth 2 -not -path './.git/*' -not -path './.agents/*' \
+            -not -path './_bmad/*' -not -path './_bmad-output/*' \
+            -not -path './artifacts/*' -not -path './mcp-project-management/node_modules/*' \
+            -not -path './personas/*' -not -path './project-management/*' \
+            -not -path './docs/*' -not -path './mcp-project-management/*' | sort
+          echo ""
+          echo "=== Python files ==="
+          find . -name '*.py' -not -path './.git/*' -not -path './.agents/*' -not -path './_bmad/*' | sort
