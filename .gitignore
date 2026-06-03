@@ -33,6 +33,8 @@ mcp-project-management/.integration-test/
 .env
 .env.local
 .env.*.local
+*.db
+*.sqlite
 *.log
 
 # --- Bmad / generated ---
